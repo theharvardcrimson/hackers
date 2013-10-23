@@ -12,7 +12,11 @@ body {
 	color: #93d500;
 }
 
-#logo, #cursor {
+.type-target {
+	line-height: 1em;
+}
+
+#logo {
 	display: inline-block;
 }
 
@@ -21,6 +25,15 @@ body {
 	margin: 0 auto;
 	margin-top: 10%;
 	text-align: center;
+}
+
+#byline {
+    text-align: center;
+}
+
+.cursor {
+    /* position: relative; */
+    /* top: 0.12em; */
 }
 
 .blink {
