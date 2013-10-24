@@ -90,7 +90,7 @@ function scroll_binary() {
     var line = "";
     var cut_off = (1 - space_prob) * balance;
     var rand = 0;
-    for (var i = 0; i < 250; i++) {
+    for (var i = 0; i < 350; i++) {
         rand = Math.random();
         if (rand > (1 - space_prob)) {
             line += "&nbsp;";
