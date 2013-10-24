@@ -162,7 +162,7 @@
 			}
 			
 			// titleLength -> how many characters it will show in the title.
-			var titleLength = 30;			
+			var titleLength = 200;			
 			var title = root.rawData[i].title;
 
 			if (title.length > titleLength) {
