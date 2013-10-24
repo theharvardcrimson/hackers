@@ -221,7 +221,11 @@ a:hover {
 #timeline {
     width: 100%;
     max-width: 600px;
-    margin: 50px auto;
+    margin: 50px auto 30px;
+}
+
+.timeline-wrap {
+    background: #7ABC00;
 }
 
 #timeline a {
@@ -231,6 +235,16 @@ a:hover {
 
 #timeline a:hover {
     text-decoration: underline;
+}
+
+#timeline-wrapper .cyber-title {
+    font-size: 18px;
+}
+
+#timeline-desc {
+    margin-top: 8px 0 0;
+    font-size: 12px;
+    line-height: 1.5em;
 }
 
 @media (max-width: 1000px) {

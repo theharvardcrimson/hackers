@@ -135,8 +135,8 @@
 				var newDate = root.rawData[i].date;
 				var dateParts = newDate.split('.');
 
-				date = dateParts[0];
-				month = dateParts[1];
+				date = dateParts[1];
+				month = dateParts[0];
 				year = parseInt(dateParts[2]);
 
 				// parse date and month
@@ -152,7 +152,10 @@
 				} else {
 					intmonth = parseInt(month);
 				}
-				var datestring = date+'.'+month+'.'+year;
+				var datestring = month+'.'+date+'.'+year;
+				// SUPER BAD HACK :D.  Love, Josh Palay
+				if (month == '01' && date == '01' && year == 2004)
+				    datestring = "01.2004";
 			} else {
 				var datestring = root.rawData[i].date;
 				year = parseInt('-'+root.rawData[i].date.replace(' ', '').replace('BC', ''));
