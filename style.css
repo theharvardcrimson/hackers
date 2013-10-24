@@ -104,7 +104,7 @@ body {
 }
 
 #top {
-    height: 100px;
+    height: 50px;
 }
 
 #left {
@@ -158,10 +158,18 @@ body {
     line-height: 1.5em;
 }
 
+#article-contents section:not(:first-child) {
+    margin-top: 120px;
+}
+
 #article-contents h2 {
-    font-size: 1.7em;
-    margin-top: 60px;
+    font-size: 3em;
     text-align: center;
+    line-height: 100%;
+    display: inline-block;
+    padding-bottom: 5px;
+    border-bottom: 7px solid #93d500;
+    margin: 10px 0;
 }
 
 #article-contents p:last-child {

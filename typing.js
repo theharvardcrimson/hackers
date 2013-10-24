@@ -16,8 +16,7 @@ function empty($cursor) {
     $('#skip').remove();
     var $bin_txt = $('#binary-text');
     if (SKIP) {
-        $('#headline').fadeOut(FADE_TIME);
-        $('#byline').fadeOut(FADE_TIME);
+        $('#headline-wrapper').fadeOut(FADE_TIME);
         $('#content').fadeIn(FADE_TIME).promise().done(function() {
             while ($bin_txt.height() < 2 * $(window).height()) {
                 console.log('gogo!');
@@ -30,8 +29,7 @@ function empty($cursor) {
         setInterval(scroll_binary, 50);
         setTimeout(function() {
             $('#content').fadeIn(FADE_TIME);
-            $('#headline').fadeOut(FADE_TIME);
-            $('#byline').fadeOut(FADE_TIME);
+            $('#headline-wrapper').fadeOut(FADE_TIME);
         }, 3800);
     }
 }
