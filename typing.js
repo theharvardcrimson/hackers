@@ -1,7 +1,7 @@
 var $cursor = $('<span />').html('&#9608;').addClass('blink cursor');
 var $bin_txt;
 var HEADLINE = 'HACKING HARVARD';
-var BYLINE = 'BY SAMUEL Y. WEINSTOCK AND DEV A. PATEL';
+var BYLINE = 'BY DEV A. PATEL AND SAMUEL Y. WEINSTOCK';
 var SKIP = false;
 var FINISHED = false;
 var FADE_TIME = 2000;
@@ -10,7 +10,7 @@ $(document).ready(function() {
     var $statue = $('#statue');
     $bin_txt = $('#binary-text');
     typeString($('#header'), 'THE HARVARD CRIMSON', 0, 100, $cursor, type_headline);
-    $(window).keypress(handle_click);
+    $(window).keydown(handle_click);
     document.addEventListener('touchstart', handle_click);
 });
 
@@ -46,7 +46,7 @@ function empty($cursor) {
 function intro_done() {
     FINISHED = true;
     setInterval(scroll_binary, 50);
-    setTimeout(handle_click, 15000);
+    setTimeout(handle_click, 9000);
 }
 
 function type_byline($cursor) {
