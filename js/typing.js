@@ -1,4 +1,4 @@
-var $cursor = $('<span />').html('&#9608;').addClass('blink cursor');
+var $cursor = $('<span />').html('&#8203;&#9608;').addClass('blink cursor');
 var $bin_txt;
 var HEADLINE = 'HACKING HARVARD';
 var BYLINE = 'BY DEV A. PATEL AND SAMUEL Y. WEINSTOCK';
