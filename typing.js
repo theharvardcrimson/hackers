@@ -2,6 +2,7 @@ var $cursor = $('<span />').html('&#9608;').addClass('blink cursor');
 var HEADLINE = 'HACKING HARVARD';
 var BYLINE = 'BY SAM WEINSTOCK AND DEV PATEL';
 var SKIP = false;
+var FADE_TIME = 1000;
 
 $(document).ready(function() {
     var $statue = $('#statue');
@@ -15,10 +16,11 @@ function empty($cursor) {
     $('#skip').remove();
     var $bin_txt = $('#binary-text');
     if (SKIP) {
-        $('#headline').fadeOut();
-        $('#byline').fadeOut();
-        $('#content').fadeIn().promise().done(function() {
+        $('#headline').fadeOut(FADE_TIME);
+        $('#byline').fadeOut(FADE_TIME);
+        $('#content').fadeIn(FADE_TIME).promise().done(function() {
             while ($bin_txt.height() < $(window).height()) {
+                console.log('gogo!');
                 scroll_binary();
             }
         });
@@ -27,10 +29,10 @@ function empty($cursor) {
     else {
         setInterval(scroll_binary, 50);
         setTimeout(function() {
-            $('#content').fadeIn();
-            $('#headline').fadeOut();
-            $('#byline').fadeOut();
-        }, 1800);
+            $('#content').fadeIn(FADE_TIME);
+            $('#headline').fadeOut(FADE_TIME);
+            $('#byline').fadeOut(FADE_TIME);
+        }, 2800);
     }
 }
 
@@ -88,7 +90,7 @@ function scroll_binary() {
     var line = "";
     var cut_off = (1 - space_prob) * balance;
     var rand = 0;
-    for (var i = 0; i < 200; i++) {
+    for (var i = 0; i < 250; i++) {
         rand = Math.random();
         if (rand > (1 - space_prob)) {
             line += "&nbsp;";

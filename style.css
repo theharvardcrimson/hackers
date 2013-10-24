@@ -23,7 +23,9 @@ body {
 }
 
 #logo {
-    position: relative;
+    position: fixed;
+    top: 0;
+    height: auto;
     padding: 7px 0;
     background-color: black;
     z-index: 10;
@@ -138,6 +140,11 @@ body {
     max-width: 800px;
     margin: 40px auto 0;
     font-size: 18px;
+}
+
+#article-contents h2 {
+    font-size: 1.3em;
+    text-align: center;
 }
 
 #article-contents p:last-child {
