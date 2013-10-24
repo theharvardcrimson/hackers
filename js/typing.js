@@ -15,7 +15,7 @@ $(document).ready(function() {
 });
 
 function handle_click(event) {
-    if (event.keyCode == 32 && $('#headline-wrapper').css('display') != 'none') {
+    if (event && event.keyCode == 32 && $('#headline-wrapper').css('display') != 'none') {
         event.preventDefault();
     }
     if (FINISHED == true)
