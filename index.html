@@ -5,9 +5,37 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
         <script src="js/timelinexml.js"></script>
+        <script src="typing.js"></script>
+
+		<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=thecrimson"></script>
+		<script type="text/javascript">
+		  addthis.layers({
+		    'theme' : 'transparent',
+		    'share' : {
+		      'position' : 'right',
+		      'numPreferredServices' : 5,
+		      'services': 'facebook, twitter, email, print, more'
+		    }
+		  });
+		</script>
+
+		<script type="text/javascript">
+
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-327124-1']);
+		  _gaq.push(['_setDomainName', 'thecrimson.com']);
+		  _gaq.push(['_trackPageview']);
+
+		  (function() {
+		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+
+		</script>
+
         <link rel="stylesheet" href="css/timelinexml.basic.css">
-		<script src="typing.js"></script>
-        <link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Lato:700|Droid+Serif&subset=latin,latin-ext'>
+		<link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Lato:700|Droid+Serif&subset=latin,latin-ext'>
 		<link rel="stylesheet" href="fonts.css">
 		<link rel="stylesheet" href="style.css">
 	</head>
@@ -19,7 +47,7 @@
 				<div id="headline" class="type-target"><span class="text"></span></div>
 				<div id="byline" class="type-target"><span class="text"></span></div>
 			</div>
-			<div id="press-key">PRESS ANY KEY TO CONTINUE...</div>
+			<div id="press-key"><span>PRESS ANY KEY TO CONTINUE...</span></div>
 		</div>
 		<div id="binary-pane">
 			<div id="binary-text"></div>
@@ -28,12 +56,12 @@
             <div id="top" class="white"></div>
             <div id="john-row">
                 <div id="left" class="white"></div>
-                <img id="statue" src="img/john.png">
+                <img id="statue" src="img/john.png" alt="John Harvard Statue">
                 <div id="right" class="white"></div>
             </div>
             <div id="article" class="white">
                 <h1 class="bebas">Hacking Harvard</h1>
-                <p class="byline bebas">BY SAMUEL Y. WEINSTOCK AND DEV A. PATEL</p>
+                <p class="byline bebas">BY DEV A. PATEL AND SAMUEL Y. WEINSTOCK</p>
                 <div id="article-contents">
                     <section>
                         <p>A high school student submits an application to Harvard. An undergraduate at the College receives a prescription from Mental Health Services. A professor collects data on nuclear power for a research project funded by the Department of Energy. All of this information is recorded electronically and stored on Harvard University&#39;s computers and servers.</p>
@@ -164,11 +192,29 @@
                         <p>Given the decentralization of Harvard&#39;s information technology, Hamer said that individual community members must work together to protect the system. &ldquo;Theres no one technical control or big thing we can throw at it; we all have to work on it together,&ldquo; Hamer said.</p>
                         <p>As attacks become more sophisticated, however, HUIT may be forced to implement more rigorous security measures to protect the entire system from the vulnerabilities of a single computer. Any step taken to combat potential attacks must be weighed in the context of Harvard&#39;s greater mission as an institution of higher education.</p>
                         <p>&ldquo;This place should be open, and if security&#39;s getting in the way of me teaching, or you guys studying or doing whatever you want, then it&#39;s bad,&rdquo; Morrisett said. &ldquo;And I worry that we&#39;re swinging too much towards taking bureaucratic steps for compliance that don&#39;t really address real problems and yet get in the way of usability of the systems.&rdquo;</p>
+
+                    <div id="signoff"
+                    	<p>&mdash;Staff writer Dev A. Patel can be reached at <a href="mailto:dev.patel@thecrimson.com">dev.patel@thecrimson.com</a>. Follow him on Twitter <a href="http://twitter.com/dev_a_patel">@dev_a_patel</a>.</p>
+
+                    	<p>&mdash;Staff writer Samuel Y. Weinstock can be reached at <a href="mailto:weinstock@thecrimson.com">weinstock@thecrimson.com</a>. Follow him on Twitter <a href="http://twitter.com/syweinstock">@syweinstock</a>.</p>
+                    </div>
+
                     </section>
                     <section>
-                    	<p>Staff writer Dev A. Patel can be reached at <a href="mailto:dev.patel@thecrimson.com">dev.patel@thecrimson.com</a>. Follow him on Twitter <a href="http://twitter.com/dev_a_patel">@dev_a_patel</a>.</p>
-
-                    	<p>Staff writer Samuel Y. Weinstock can be reached at <a href="mailto:weinstock@thecrimson.com">weinstock@thecrimson.com</a>. Follow him on Twitter <a href="http://twitter.com/syweinstock">@syweinstock</a>.</p>
+                    	<div id="article-comments">
+					      <div id="disqus_thread"></div>
+					      <script>
+					          var disqus_shortname = 'thecrimson';
+					          (function() {
+					              var dsq = document.createElement('script');
+					              dsq.type = 'text/javascript';
+					              dsq.src = 'http://thecrimson.disqus.com/embed.js';
+					              dsq.async = true;
+					              (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0])
+					                  .appendChild(dsq);
+					          })();
+					      </script>
+					  </div>
                     </section>
                 </div>
             </div>

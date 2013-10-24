@@ -36,6 +36,14 @@ a:hover {
     text-decoration: underline;
 }
 
+#at4-share, #at4m-dock, #at4m-dock-toggle {
+    display: none !important;
+}
+
+#at4-share.show-dis, #at4m-dock.show-dis, #at4m-dock-toggle.show-dis {
+    display: block !important;
+}
+
 .type-target {
 	line-height: 1em;
 }
@@ -190,6 +198,10 @@ a:hover {
     margin-top: 120px;
 }
 
+#signoff {
+    margin-top: 40px;
+}
+
 #article-contents h2 {
     font-size: 3em;
     text-align: center;
@@ -247,10 +259,26 @@ a:hover {
 }
 
 @media (max-width: 500px) {
-
+    #headline {
+        font-size: 45px;
+    }
+    #byline {
+        font-size: 0.9em;
+    }
 }
 
 @media (max-width: 400px) {
+    #headline {
+        font-size: 40px;
+    }
+    #headline-wrapper {
+        width: 60%;
+        margin-top: 25%;
+    }
+    #byline {
+        font-size: 0.8em;
+    }
+
     #statue {
        width: 67%;
     }
