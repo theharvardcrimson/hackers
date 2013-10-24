@@ -174,19 +174,6 @@ body {
     display: table;
 }
 
-#timeline {
-    width: 600px;
-    margin: 50px auto;
-}
-
-#timeline a {
-    color: #AAA;
-    text-decoration: none;
-}
-
-#timeline a:hover {
-    text-decoration: underline;
-}
 
 .dot {
     height: 10px;

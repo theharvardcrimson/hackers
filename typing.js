@@ -1,40 +1,48 @@
 var $cursor = $('<span />').html('&#9608;').addClass('blink cursor');
+var $bin_txt;
 var HEADLINE = 'HACKING HARVARD';
 var BYLINE = 'BY SAMUEL Y. WEINSTOCK AND DEV A. PATEL';
 var SKIP = false;
-var FADE_TIME = 1000;
+var FINISHED = false;
+var FADE_TIME = 2000;
 
 $(document).ready(function() {
     var $statue = $('#statue');
-    typeString($('#logo'), 'THE HARVARD CRIMSON', 0, 100, $cursor, type_headline);
+    $bin_txt = $('#binary-text');
+    typeString($('#header'), 'THE HARVARD CRIMSON', 0, 100, $cursor, type_headline);
     $(window).keypress(function() {
-        SKIP = true;
+        if (FINISHED == true)
+            empty();
+        else
+            SKIP = true;
     });
 });
 
 function empty($cursor) {
-    $('#skip').remove();
-    var $bin_txt = $('#binary-text');
     if (SKIP) {
-        $('#headline').fadeOut(FADE_TIME);
-        $('#byline').fadeOut(FADE_TIME);
+        $('#headline-wrapper').fadeOut(FADE_TIME);
+        $("#press-key").fadeOut(FADE_TIME);
         $('#content').fadeIn(FADE_TIME).promise().done(function() {
-            while ($bin_txt.height() < 2 * $(window).height()) {
-                console.log('gogo!');
+            while ($bin_txt.height() < $(window).height()) {
                 scroll_binary();
             }
             setInterval(scroll_binary, 50);
+            $("#header").addClass("animate-shadow");
         });
     }
     else {
-        setInterval(scroll_binary, 50);
-        setTimeout(function() {
-            $('#content').fadeIn(FADE_TIME);
-            $('#headline').fadeOut(FADE_TIME);
-            $('#byline').fadeOut(FADE_TIME);
-        }, 3800);
+        $('#headline-wrapper').fadeOut(FADE_TIME);
+        $("#press-key").fadeOut(FADE_TIME);
+        $('#content').fadeIn(FADE_TIME, function(){
+            $("#header").addClass("animate-shadow");
+        });
     }
-    $('#timeline').timelinexml({ src : $('#timeline-html-wrap') });
+    $('#timeline').timelinexml({ src : $('.timeline-html-wrap') });
+}
+
+function intro_done() {
+    FINISHED = true;
+    setInterval(scroll_binary, 50);
 }
 
 function type_byline($cursor) {
@@ -43,7 +51,7 @@ function type_byline($cursor) {
     if (!SKIP) {
         setTimeout(function() {
             typeString($('#byline'), BYLINE, 0, 100, 
-                $cursor, empty);
+                $cursor, intro_done);
         }, 500);
     }
     else {
@@ -86,31 +94,39 @@ function scroll_binary() {
     // CONFIGURABLES:
     var balance = 0.5; // Balance between 1's and 0's
     var space_prob = 0.05; // Probability for spaces to appear
+    var penalty = 0.08; // Percent 1 or 0 is punished after each
+                        // repeated appearance
 
     // Generate line:
     var line = "";
-    var cut_off = (1 - space_prob) * balance;
+    var center = (1 - space_prob) * balance;
+    var cut_off = center;
     var rand = 0;
     for (var i = 0; i < 300; i++) {
         rand = Math.random();
         if (rand > (1 - space_prob)) {
             line += "&nbsp;";
-            cut_off = (1 - space_prob) * balance;
+            cut_off = center;
         }
         if (rand >= cut_off) {
             line += "1";
-            if (cut_off < 0.5)
-                cut_off = (1 - space_prob) * balance;
-            cut_off += 0.1;
+            if (cut_off < center)
+                cut_off = center;
+            cut_off += penalty * (1 - space_prob);
         }
         else {
             line += "0";
-            if (cut_off > 0.5)
-                cut_off = (1 - space_prob) * balance;
-            cut_off -= 0.1;
+            if (cut_off > center)
+                cut_off = center;
+            cut_off -= penalty * (1 - space_prob);
         }
-
     }
 
-    $("#binary-text").append(line + "<br>");
+    // Pop hidden rows
+    // + 10 prevents yanking a line that's half-off prematurely
+    if ($bin_txt.height() > $(window).height() + 10) {
+        $bin_txt.children(":first").remove();
+    }
+
+    $bin_txt.append("<span>" + line + "<br></span>");
 }
