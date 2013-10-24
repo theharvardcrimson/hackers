@@ -10,13 +10,16 @@ $(document).ready(function() {
     var $statue = $('#statue');
     $bin_txt = $('#binary-text');
     typeString($('#header'), 'THE HARVARD CRIMSON', 0, 100, $cursor, type_headline);
-    $(window).keypress(function() {
-        if (FINISHED == true)
-            empty();
-        else
-            SKIP = true;
-    });
+    $(window).keypress(handle_click);
+    document.addEventListener('touchstart', handle_click);
 });
+
+function handle_click () {
+    if (FINISHED == true)
+        empty();
+    else
+        SKIP = true;
+}
 
 function empty($cursor) {
     if (SKIP) {
@@ -43,6 +46,7 @@ function empty($cursor) {
 function intro_done() {
     FINISHED = true;
     setInterval(scroll_binary, 50);
+    setTimeout(handle_click, 15000);
 }
 
 function type_byline($cursor) {
@@ -108,7 +112,7 @@ function scroll_binary() {
             line += "&nbsp;";
             cut_off = center;
         }
-        if (rand >= cut_off) {
+        else if (rand >= cut_off) {
             line += "1";
             if (cut_off < center)
                 cut_off = center;
