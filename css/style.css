@@ -6,6 +6,15 @@ body {
 	height: 100%%;
 }
 
+a {
+    color: #7ABC00;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
 .bebas {
     font-family: "Bebas";
     word-spacing: 0.2em;
@@ -31,13 +40,27 @@ body {
 	line-height: 1em;
 }
 
-#logo {
+#header {
     position: fixed;
     top: 0;
     height: auto;
     padding: 7px 10px;
-    background-color: black;
+    background-color: rgba(0,0,0,0.8);
     z-index: 10;
+    font-size: 1.4em;
+}
+
+.animate-shadow {
+    box-shadow: 0px 2px 10px #888888;
+    -webkit-box-shadow: 0px 2px 10px #888888;
+    -moz-box-shadow: 0px 2px 10px #888888;
+
+    -webkit-transition: all 1s linear;
+    -o-transition: all 1s linear;
+    -moz-transition: all 1s linear;
+    -ms-transition: all 1s linear;
+    -kthtml-transition: all 1s linear;
+    transition: all 1s linear;
 }
 
 #headline-wrapper {
@@ -57,11 +80,13 @@ body {
 	margin: 0 auto;
 }
 
-#skip {
+#press-key {
     position: absolute;
     bottom: 0;
     left: 0;
     padding: 5px;
+    background: #000;
+    width: 100%;
 }
 
 .cursor {
@@ -104,7 +129,7 @@ body {
 }
 
 #top {
-    height: 100px;
+    height: 50px;
 }
 
 #left {
@@ -124,6 +149,7 @@ body {
     width: 25%;
     /* margin-left: 36%; */
     margin-bottom: -5px;
+    border: 2px solid #fff;
 }
 
 #right {
@@ -137,6 +163,8 @@ body {
 #article {
     min-height: 700px;
     padding-bottom: 100px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 #article h1 {
@@ -158,37 +186,122 @@ body {
     line-height: 1.5em;
 }
 
+#article-contents section:not(:first-child) {
+    margin-top: 100px;
+}
+
+#signoff {
+    margin-top: 40px;
+}
+
 #article-contents h2 {
-    font-size: 1.7em;
-    margin-top: 60px;
+    font-size: 3em;
     text-align: center;
+    line-height: 100%;
+    display: inline-block;
+    padding-bottom: 5px;
+    border-bottom: 7px solid #93d500;
+    margin: 10px 0;
 }
 
 #article-contents p:last-child {
     margin-bottom: 0;
 }
 
-.clearfix:before,
-.clearfix:after {
-    content: " ";
-    display: table;
+#timeline-wrapper {
+    padding: 20px 20px 1px 20px;
+    margin: 35px auto;
+    background-color: rgba(0, 0, 0, 0.05);
 }
 
-
-.dot {
-    height: 10px;
-    width: 10px;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    border-radius: 10px;
+#timeline {
+    width: 100%;
+    max-width: 600px;
+    margin: 50px auto;
 }
 
-.clearfix:after {
-    clear: both;
+#timeline a {
+    color: #AAA;
+    text-decoration: none;
 }
 
-.clearfix {
-    *zoom: 1;
+#timeline a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 1000px) {
+    #statue {
+       width: 33%;
+    }
+    #left {
+        width: 33.5%;
+    }
+    #right {
+        width: 33.5%;
+    }
+}
+
+@media (max-width: 700px) {
+    #binary-pane {
+        font-size: 0.5em;
+    }
+
+    #statue {
+       width: 50%;
+    }
+    #left {
+        width: 25%;
+    }
+    #right {
+        width: 25%;
+    }
+}
+
+@media (max-width: 500px) {
+    #headline {
+        font-size: 45px;
+    }
+    #byline {
+        font-size: 0.9em;
+    }
+    #headline-wrapper {
+        margin-top: 25%;
+    }
+
+    #timeline-wrapper {
+        display: none;
+    }
+}
+
+@media (max-width: 400px) {
+    #headline {
+        font-size: 40px;
+    }
+    #headline-wrapper {
+        width: 60%;
+    }
+    #byline {
+        font-size: 0.8em;
+    }
+
+    #statue {
+       width: 67%;
+    }
+    #left {
+        width: 16.5%;
+    }
+    #right {
+        width: 16.5%;
+    }
+    #top {
+        height: 40px;
+    }
+    #article h1 {
+        font-size: 2em;
+    }
+    #article .byline {
+        font-size: 0.8em;
+    }
 }
 
 .blink {
