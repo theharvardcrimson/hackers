@@ -98,8 +98,8 @@ a:hover {
 }
 
 .cursor {
-    /* position: relative; */
-    /* top: 0.12em; */
+     position: relative; 
+     top: 0.1em; 
 }
 
 #binary-pane {
@@ -196,6 +196,16 @@ a:hover {
 
 #article-contents section:not(:first-child) {
     margin-top: 100px;
+}
+
+#signoff {
+    /*margin-top: 4 0px;*/
+}
+
+#designer_signoff {
+    font-style: italic;
+    font-size: 0.9em;
+    margin-top: 24px;
 }
 
 #article-contents h2 {
