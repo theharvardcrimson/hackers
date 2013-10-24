@@ -1,11 +1,17 @@
 var $cursor = $('<span />').html('&#9608;').addClass('blink cursor');
 
 $(document).ready(function() {
+    var $statue = $('#statue');
     typeString($('#logo'), 'THE HARVARD CRIMSON', 0, 100, $cursor, type_headline);
 });
 
 function empty($cursor) {
     setInterval(scroll_binary, 50);
+    setTimeout(function() {
+        $('#content').fadeIn();
+        $('#headline').fadeOut();
+        $('#byline').fadeOut();
+    }, 1800);
 }
 
 function type_byline($cursor) {
