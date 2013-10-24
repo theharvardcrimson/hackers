@@ -1,6 +1,6 @@
 var $cursor = $('<span />').html('&#9608;').addClass('blink cursor');
 var HEADLINE = 'HACKING HARVARD';
-var BYLINE = 'BY SAM WEINSTOCK AND DEV PATEL';
+var BYLINE = 'BY SAMUEL Y. WEINSTOCK AND DEV A. PATEL';
 var SKIP = false;
 var FADE_TIME = 1000;
 
@@ -19,12 +19,12 @@ function empty($cursor) {
         $('#headline').fadeOut(FADE_TIME);
         $('#byline').fadeOut(FADE_TIME);
         $('#content').fadeIn(FADE_TIME).promise().done(function() {
-            while ($bin_txt.height() < $(window).height()) {
+            while ($bin_txt.height() < 2 * $(window).height()) {
                 console.log('gogo!');
                 scroll_binary();
             }
+            setInterval(scroll_binary, 50);
         });
-        setInterval(scroll_binary, 50);
     }
     else {
         setInterval(scroll_binary, 50);
@@ -32,7 +32,7 @@ function empty($cursor) {
             $('#content').fadeIn(FADE_TIME);
             $('#headline').fadeOut(FADE_TIME);
             $('#byline').fadeOut(FADE_TIME);
-        }, 2800);
+        }, 3800);
     }
 }
 
