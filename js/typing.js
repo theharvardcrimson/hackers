@@ -14,7 +14,8 @@ $(document).ready(function() {
     document.addEventListener('touchstart', handle_click);
 });
 
-function handle_click () {
+function handle_click (e) {
+    e.preventDefault();
     if (FINISHED == true)
         empty();
     else
