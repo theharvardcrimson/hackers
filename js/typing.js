@@ -14,7 +14,10 @@ $(document).ready(function() {
     document.addEventListener('touchstart', handle_click);
 });
 
-function handle_click () {
+function handle_click(event) {
+    if (event.keyCode == 32 && $('#headline-wrapper').css('display') != 'none') {
+        event.preventDefault();
+    }
     if (FINISHED == true)
         empty();
     else
