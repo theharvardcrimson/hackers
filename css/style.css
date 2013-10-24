@@ -195,7 +195,7 @@ a:hover {
 }
 
 #article-contents section:not(:first-child) {
-    margin-top: 100px;
+    margin-top: 40px;
 }
 
 #article-contents h2 {
