@@ -34,7 +34,7 @@ function empty($cursor) {
             $('#byline').fadeOut(FADE_TIME);
         }, 3800);
     }
-    $('#timeline').timelinexml({ src : $('#timeline-html-wrap') });
+    $('#timeline').timelinexml({ src : 'timeline.xml' });
 }
 
 function type_byline($cursor) {
