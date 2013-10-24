@@ -98,13 +98,13 @@ function scroll_binary() {
             line += "1";
             if (cut_off < 0.5)
                 cut_off = (1 - space_prob) * balance;
-            cut_off += 0.1;
+            cut_off += 0.1 * (1 - space_prob);
         }
         else {
             line += "0";
             if (cut_off > 0.5)
                 cut_off = (1 - space_prob) * balance;
-            cut_off -= 0.1;
+            cut_off -= 0.1 * (1 - space_prob);
         }
 
     }
